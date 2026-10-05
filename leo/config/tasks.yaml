@@ -1,0 +1,73 @@
+plan_lesson:
+  description: >
+    Student: {student_name}
+    What we remember about this student: {student_history}
+
+    The student said: "{request}"
+
+    Decide whether this is a clear, teachable topic that fits in one short
+    session. If it is, pick a focused topic, a level that suits the student
+    (use their history if there is any) and 2-4 concrete learning goals, and
+    write a short brief telling the Explainer what to focus on. If the student
+    is coming back to something they struggled with before, say so in the
+    brief.
+
+    If the request is unclear, too broad or not a learning topic, set is_clear
+    to false and write one friendly clarifying question.
+  expected_output: A lesson plan, or a clarifying question if the request is unclear.
+
+explain_topic:
+  description: >
+    Teach {student_name} about: {topic} (level: {level}).
+
+    Learning goals:
+    {learning_goals}
+
+    Brief from the Coordinator: {brief}
+
+    Write a lesson of roughly 250-400 words. Cover every learning goal, include
+    at least one concrete example and finish with a 3-bullet recap. Write
+    directly to the student.
+  expected_output: A short lesson in markdown, written to the student.
+
+create_quiz:
+  description: >
+    Using only the lesson the Explainer just wrote on {topic}, create
+    {num_questions} practice questions. Each question must test a different
+    concept from the lesson. Use a mix of multiple choice (4 options labelled
+    A) to D)) and short answer. For multiple choice the answer is the option
+    letter followed by the option text.
+  expected_output: A quiz with {num_questions} questions, each with its concept and answer key.
+
+evaluate_answers:
+  description: >
+    The Quiz Master set a quiz on {topic}. Here are the questions, the answer
+    key and what the student answered:
+
+    {submission}
+
+    Grade every question. Use "correct" (score 1), "partial" (score between 0.3
+    and 0.7) or "incorrect" (score 0). For each one, write one or two sentences
+    of feedback addressed to the student. Then write a short overall comment.
+  expected_output: A grade and feedback for every question plus an overall comment.
+
+reteach_topic:
+  description: >
+    The Evaluator sent these answers back because the student is still weak on
+    them. Topic: {topic} (level: {level}).
+
+    {weak_points}
+
+    Re-teach only these concepts. Look at what the student actually answered,
+    name the misunderstanding and explain it a different way from before -
+    a new analogy or a worked example. Keep it under 300 words.
+  expected_output: A focused re-explanation in markdown, written to the student.
+
+create_retry_quiz:
+  description: >
+    The Explainer has just re-taught some concepts on {topic}. Write
+    {num_questions} new questions that test only those re-taught concepts.
+    Do not reuse the earlier questions. Same format rules as before: multiple
+    choice has options A) to D) and the answer is the letter plus the option
+    text.
+  expected_output: A quiz with {num_questions} new questions on the re-taught concepts.

@@ -1,0 +1,4 @@
+crewai[google-genai]==1.15.23
+python-dotenv==1.2.4
+rich==14.3.4
+PyYAML==6.0.3
