@@ -132,3 +132,7 @@ leo/models.py           Pydantic schemas for structured output (LessonPlan, Quiz
 leo/memory.py           per-student long-term memory
 leo/ui.py               terminal output - shows which agent is working and every handoff
 ```
+
+# Demo video
+
+[https://drive.google.com/file/d/133qpwEY2KrHI5SNOSpxu6cxIooejlMgc/view?usp=sharing](https://drive.google.com/file/d/133qpwEY2KrHI5SNOSpxu6cxIooejlMgc/view?usp=sharing)
